@@ -3,7 +3,7 @@
 $clothes = array(
     array('title' => 'Chanel Dress', 'brand' => 'Chanel', 'price' => 1300, 'pic' => 'chanel-dress.jpg'),
     array('title' => 'Karl Lagerfeld Dress', 'brand' => 'Karl Lagerfeld', 'price' => 1200, 'pic' => 'karl-lagerfeld-dress.jpg'),
-    array('title' => 'Moschino Dress', 'brand' => 'Moschino', 'price' => 300, 'pic' => 'moschino-t-shirt.jpeg'),
+    array('title' => 'Moschino', 'brand' => 'Moschino', 'price' => 300, 'pic' => 'moschino-t-shirt.jpeg'),
     array('title' => 'Dior Dress', 'brand' => 'Dior', 'price' => 2300, 'pic' => 'dior-dress.jpg')
 );
 
