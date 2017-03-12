@@ -20,9 +20,8 @@ $sortBy = $_GET['sortBy'];
 $sortValue = $_GET['sortValue'];
 echo "All cars from " . $sortBy . ": " . $sortValue." <br /> "; // $_GET['brand'] съдържа стойността подадена в адреса на страницата с променливата brand http://cars.php?brand=audi
 
-foreach ($cars as $car) {
-    //Проверяваме дали марката на автомобила е същата която сме подали в адреса на страницата и показваме на екрана информация за автомобила
-    if ($car[$sortBy] == $sortValue) {
+for ($i=0; $i < count($cars); $i++) {
+    if ($cars[$i][$sortBy] == $sortValue) {
         echo "Brand: " . $car['brand'] . "<br />";
         echo "Model: " . $car['model'] . "<br />";
         echo "Year: " . $car['year'] . "<br />";
