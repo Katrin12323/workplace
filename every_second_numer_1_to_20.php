@@ -1,7 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: katrinees
- * Date: 13.03.17
- * Time: 10:47
- */
+for ($i=1; $i<20; $i=$i+2){
+    echo $i . " " . "<br>";
+
+}
