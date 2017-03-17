@@ -1,10 +1,11 @@
 <?php
+<?php
  $nursery = array(
-    array('fname' =>'Stefan'),
-    array('lastname' => 'Kabakov'),
-    array('age' => 1),
-    array('name' => 'Katrin Beleva'),
-    array('telephone' => '0889470255')
+     array('fname' =>'Stefan'),
+     array('lastname' => 'Kabakov'),
+     array('age' => 1),
+     array('name' => 'Katrin Beleva'),
+     array('telephone' => '0889470255')
  );
   $i = 0;
  echo "<h2> Child:  </h2>";
@@ -14,7 +15,7 @@
 
       if (array_key_exists('fname', $nursery[$i])) {
 
-        echo "<li>" .  $nursery[$i]['fname'] . " </li><br />";
+          echo "<li>" .  $nursery[$i]['fname'] . " </li><br />";
 
       } elseif (array_key_exists('lastname', $nursery[$i])) {
 
@@ -22,7 +23,7 @@
 
       } elseif (array_key_exists('age', $nursery[$i])) {
 
-         echo  "<li>" . $nursery[$i]['age'] . " year old </li><br />";
+          echo  "<li>" . $nursery[$i]['age'] . " year old </li><br />";
 
       } elseif (array_key_exists('name', $nursery[$i])) {
 
