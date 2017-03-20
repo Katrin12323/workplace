@@ -1,5 +1,28 @@
 <?php
-<?php
+
+function showChildInfo($childArray) {
+    if (array_key_exists('fname', $childArray)) {
+
+        echo "<li>" .  $childArray['fname'] . " </li><br />";
+
+    } elseif (array_key_exists('lastname', $childArray)) {
+
+        echo  "<li>" . $childArray['lastname'] . " </li><br />";
+
+    } elseif (array_key_exists('age', $childArray)) {
+
+        echo  "<li>" . $childArray['age'] . " year old </li><br />";
+
+    } elseif (array_key_exists('name', $childArray)) {
+
+        echo "<li> Mother's name: " . $childArray['name'] . " </li><br />";
+
+    } elseif (array_key_exists('telephone', $childArray)) {
+
+        echo  "<li> Telephone number: " . $childArray['telephone'] . " </li><br />";
+    }
+}
+
  $nursery = array(
      array('fname' =>'Stefan'),
      array('lastname' => 'Kabakov'),
@@ -12,27 +35,7 @@
   echo "<ul>";
 
   while ($i < count($nursery)) {
-
-      if (array_key_exists('fname', $nursery[$i])) {
-
-          echo "<li>" .  $nursery[$i]['fname'] . " </li><br />";
-
-      } elseif (array_key_exists('lastname', $nursery[$i])) {
-
-          echo  "<li>" . $nursery[$i]['lastname'] . " </li><br />";
-
-      } elseif (array_key_exists('age', $nursery[$i])) {
-
-          echo  "<li>" . $nursery[$i]['age'] . " year old </li><br />";
-
-      } elseif (array_key_exists('name', $nursery[$i])) {
-
-          echo "<li> Mother's name: " . $nursery[$i]['name'] . " </li><br />";
-
-      } elseif (array_key_exists('telephone', $nursery[$i])) {
-
-          echo  "<li> Telephone number: " . $nursery[$i]['telephone'] . " </li><br />";
-      }
+      showChildInfo($nursery[$i]);
       $i++;
 
   }
