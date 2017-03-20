@@ -48,4 +48,4 @@ while ($i < count($theArray)) {
 
     $i++;
 }
-echo  "</ul>";
+echo  "</ul>";;
