@@ -12,9 +12,11 @@ $theArray = array(
     array('brand' => 'Luxury Collection','founded' => '2014')
 );
 
+function title ($title) {
+    echo  "<h2>" . $title .  " </h2> <br />";
+}
 
-
-echo "<h2> Foreach-array </h2>";
+title('Foreach array');
 echo "<ul>";
 foreach ($theArray as $passione) {
 
@@ -24,8 +26,7 @@ foreach ($theArray as $passione) {
 echo "</ul>";
 
 
-
-echo "<h2> For-array </h2>";
+title('For array');
 echo "<ul>";
 
 for ($i = 0; $i < count($theArray); $i++) {
@@ -37,7 +38,7 @@ echo "</ul>";
 
 
 
-echo "<h2> While-array </h2>";
+title(' While array');
 echo "<ul>";
 
 $i=0;
