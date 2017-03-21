@@ -3,14 +3,14 @@
 function Results ($sum) {
     echo "The result is " . $sum ;
 }
-function Calculator($a, $b) {
+function CalculatorMultiply ($a, $b) {
     echo Results();
     echo $a*$b . "<br />";
 }
-Calculator(10,12);
-Calculator(8,3);
-Calculator(22,11);
-Calculator(2,4);
+CalculatorMultiply(10,12);
+CalculatorMultiply(8,3);
+CalculatorMultiply(22,11);
+CalculatorMultiply(2,4);
 
 //10, 12
 //8, 3

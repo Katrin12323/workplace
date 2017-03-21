@@ -4,15 +4,15 @@ function Results ($sum) {
     echo "The result is " . $sum ;
 }
 
-function Calculator ($a,$b) {
+function CalculatorDivide ($a,$b) {
     echo Results();
     echo $a/$b . " <br />";
 }
 
-Calculator(10,2);
-Calculator(8,4);
-Calculator(22,11);
-Calculator(1024,16);
+CalculatorDivide(10,2);
+CalculatorDivide(8,4);
+CalculatorDivide(22,11);
+CalculatorDivide(1024,16);
 
 
 
