@@ -17,9 +17,9 @@ if ('add'== $_GET['action']) {
      CalculatorMultiply($numberA, $numberB);
 } elseif ('percentage' == $_GET['action']) {
     CalculatorPercentage($numberA, $numberB);
+} elseif ('factor' == $_GET['action']) {
+    CalculatorFactor($numberA, $numberB);
 }
-
-
 
 
 
