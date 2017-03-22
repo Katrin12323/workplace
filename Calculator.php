@@ -3,39 +3,33 @@ function Results ($sum) {
     echo "The result is " . $sum ;
 }
 function CalculatorMultiply ($a, $b) {
-    echo Results();
-    echo $a*$b . "<br />";
+    echo Results($a*$b);
 }
-CalculatorMultiply(10,12);
-CalculatorMultiply(8,3);
-CalculatorMultiply(22,11);
-CalculatorMultiply(2,4);
+
 
 function CalculatorDivide ($a,$b) {
-    echo Results();
-    echo $a/$b . " <br />";
-}
+    echo Results($a/$b);
 
-CalculatorDivide(10,2);
-CalculatorDivide(8,4);
-CalculatorDivide(22,11);
-CalculatorDivide(1024,16);
+}
 
 
 function CalculatorAccumulation ($a, $b) {
-    echo Results();
-    echo $a + $b . "<br />";
+    echo Results($a + $b );
 }
 
-CalculatorAccumulation(10,20);
 
 function CalculatorExtract($a, $b) {
-    echo Results();
-    echo $a - $b . "<br />";
+    echo Results($a - $b);
 }
 
-CalculatorExtract(10,9);
-CalculatorExtract(9,5);
-CalculatorExtract(9000,6984);
+$action = $_GET['action'];
+$numberA = $_GET ['a'];
+$numberB = $_GET['b'];
+
+
+
+
+
+
 
 
