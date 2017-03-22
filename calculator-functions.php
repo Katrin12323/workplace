@@ -19,3 +19,6 @@ function CalculatorDivide ($a,$b) {
      Results($a/$b);
 
 }
+function CalculatorPercentage ($a, $b) {
+    Results((100*$a)/$b);
+}

@@ -9,21 +9,16 @@ $numberB = $_GET['b'];
 
 if ('add'== $_GET['action']) {
     CalculatorAdd($numberA, $numberB);
-}
-
-elseif ('subtract' == $_GET['action']) {
+} elseif ('subtract' == $_GET['action']) {
      CalculatorSubtract($numberA, $numberB);
-}
-
-
-elseif ('divide' == $_GET['action']) {
+} elseif ('divide' == $_GET['action']) {
      CalculatorDivide($numberA, $numberB);
-
-}
-
-elseif ('multiply' == $_GET['action']) {
+} elseif ('multiply' == $_GET['action']) {
      CalculatorMultiply($numberA, $numberB);
+} elseif ('percentage' == $_GET['action']) {
+    CalculatorPercentage($numberA, $numberB);
 }
+
 
 
 
