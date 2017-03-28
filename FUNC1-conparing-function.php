@@ -1,6 +1,7 @@
 <?php
 function WhichNumberIsBigger ($a, $b) {
-    if ($a < $b) {
+
+    if ($a <  $b) {
         echo $b . " is bigger than " . $a . "<br />";
     }
     elseif ($a > $b) {
@@ -8,7 +9,4 @@ function WhichNumberIsBigger ($a, $b) {
 
     }
 }
-
-WhichNumberIsBigger(10,20);
-WhichNumberIsBigger(56,98);
-WhichNumberIsBigger(64,85);
+WhichNumberIsBigger($_GET['a'],$_GET ['b']);
