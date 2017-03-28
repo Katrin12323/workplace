@@ -9,4 +9,5 @@ function WhichNumberIsBigger ($a, $b) {
 
     }
 }
-WhichNumberIsBigger($_GET['a'],$_GET ['b']);
+
+WhichNumberIsBigger($_POST['b'], $_POST['a']);
