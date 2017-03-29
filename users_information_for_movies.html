@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> What do you know about movies </title>
+</head>
+<body>
+
+<h2> What do u know about movies ? Share with us </h2>
+
+<form action="http://localhost/movie_information_php.php" method="post">
+
+    <label for="movieTitle"> What is the title of the movie, which you want to share with us </label> <br/>
+    <input type="text" name="movieTitle"> <br/> <br/>
+
+    <label for="movieYear"> Which year the film was released in the cinemas </label> <br/>
+    <input type="text" name="movieYear"> <br/><br/>
+
+    <label for="review"> Tell us a little bit of the film and what is this thing which excite you in this film  </label> <br/>
+    <textarea name="review" rows="15" cols="60">  </textarea> <br/> <br/>
+
+    <label for="SuitableAge"> Is it suitable for children under 12 years ? </label> <br/>
+    <input type="radio" name="SuitableAge" value="yes"> yes <br/>
+    <input type="radio" name="SuitableAge" value="no"> no <br/> <br/>
+
+    <input type="submit">
+
+</form>
+
+</body>
+</html>
