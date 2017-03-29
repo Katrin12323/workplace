@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Vacantion</title>
+    <title>Vacation</title>
 </head>
 <body>
 <h2> Plan your vacation </h2>
 
-<form action="http://localhost/planing_form_function.php" method="post">
+<form action="http://localhost/planing_form_register.php" method="post">
     <label for="firstName"> Enter your first name </label> <br/>
     <input type="text" name="firstName"> <br/><br/>
 
@@ -18,16 +18,16 @@
     <input type="number" name="countPeople"> <br/> <br/>
 
     <label for="selectSeason"> Which season you prefer to be the vacation? </label> <br/>
-    <input type="checkbox" name="selectSeason" value="Spring"> Spring <br/>
-    <input type="checkbox" name="selectSeason" value="Summer"> Summer <br/>
-    <input type="checkbox" name="selectSeason" value="Autumn"> Autumn <br/>
-    <input type="checkbox" name="selectSeason" value="Winter"> Winter <br/> <br/>
+    <input type="checkbox" name="selectSeason[]" value="Spring"> Spring <br/>
+    <input type="checkbox" name="selectSeason[]" value="Summer"> Summer <br/>
+    <input type="checkbox" name="selectSeason[]" value="Autumn"> Autumn <br/>
+    <input type="checkbox" name="selectSeason[]" value="Winter"> Winter <br/> <br/>
 
     <label for="contact"> When we have the suitable vacation for you, we will contact you </label> <br/>
     <input type="text" name="email" value="enter  email adress"> <br/><br/>
     <input type="text" name="telephone"  value="enter telephone number"> <br/> <br/>
 
-    <input type="button" name="Submit" value="Submit">
+    <input type="submit" name="Submit" value="Submit">
 
 
 
