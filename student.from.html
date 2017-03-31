@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student form</title>
+</head>
+<body>
+    <h2>Enter information for student</h2>
+
+    <form action="http://localhost/studentClass.php" method="POST">
+        <label for="firstName">Enter first name:</label>
+        <input type="text" name="firstName"> <br />
+
+        <label for="lastName">Enter last name:</label>
+        <input type="text" name="lastName"> <br />
+
+        <label for="numberInClass">Enter student's number in class:</label>
+        <input type="text" name="numberInClass"> <br />
+
+        <label for="grade">Enter student's grade:</label>
+        <select name="grade">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
+        <br />
+
+        <label for="gradeLetter">Enter student's number in class:</label><br />
+        <label>A: </label><input type="radio" name="gradeLetter" value="A"> <br />
+        <label>Б: </label><input type="radio" name="gradeLetter" value="Б"> <br />
+        <label>В: </label><input type="radio" name="gradeLetter" value="В"> <br />
+        <label>Г: </label><input type="radio" name="gradeLetter" value="Г"> <br />
+        <label>Д: </label><input type="radio" name="gradeLetter" value="Д"> <br />
+        <label>Е: </label><input type="radio" name="gradeLetter" value="Е"> <br />
+
+        <input type="submit" value="Save Student" />
+    </form>
+</body>
+</html>
