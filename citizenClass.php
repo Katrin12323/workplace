@@ -25,15 +25,14 @@ class Citizen {
         $this->homeTown = $_homeTown;
         $this->currentAddress = $_currentAddress;
     }
+    public function showCitizenInfo ()
+    {
+        echo "You entered the following citizen's information: <br />";
+        echo  $this->firstName . " " . $this->fathersName . " " . $this->lastName . " " . $this->identificationNumber . "<br/>";
+        echo "Born in: " . $this->homeTown . " on " . $this->birthday . " year with current address " . $this->currentAddress ."<br />";
+    }
+
 }
 $citizen1= new Citizen($_POST['firstName'], $_POST['fathersName'], $_POST['lastName'], $_POST['identificationNumber'], $_POST['birthday'], $_POST['homeTown'], $_POST['currentAddress']);
+$citizen1->showCitizenInfo();
 
-function ShowMeEnteredInformation ($citizen1) {
-    echo "You entered the following citizen's information: <br />";
-    echo  $citizen1->firstName . " " . $citizen1->fathersName . " " . $citizen1->lastName . " " . $citizen1->identificationNumber . "<br/>";
-    echo "Born in: " . $citizen1->homeTown . " on " . $citizen1->birthday . " year with current address " . $citizen1->currentAddress ."<br />";
-}
-
-
-
-ShowMeEnteredInformation($citizen1);
