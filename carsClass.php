@@ -23,17 +23,23 @@ class Cars {
         $this->isTheCarStruck = $_isTheCarStruck;
 
     }
+    public function showCarsInfo () {
+        echo "You entered a new car to database: <br/>";
+        echo "Brand: " .$this->brand . "<br/>";
+        echo "Model: " .$this->model . "<br/>";
+        echo "Year of manufacture: " . $this->YearOfManufacture . "<br/>";
+        echo "Extras: " . $this->extras . "<br/>";
+        echo "Color: " .$this->color . "<br/>";
+        if ($this->isTheCarStruck == 'yes'){
+            ?>  <textarea rows="4" cols="50"> "Describe the damage on the car  </textarea> <br/> <?php
+        }
+        ?>
+        <form action=" " method="post">
+        <input type="submit" value="save the car">
+        </form>
+        <?php
+    }
 }
 $audi = new Cars ($_POST['brand'], $_POST['model'], $_POST['YearOfManufacture'], $_POST['extras'],$_POST['color'],$_POST['isTheCarStruck']);
-
-echo "You entered a new car to database: <br/>";
-echo "Brand: " .$audi->brand . "<br/>";
-echo "Model: " .$audi->model . "<br/>";
-echo "Year of manufacture: " . $audi->YearOfManufacture . "<br/>";
-echo "Extras: " . $audi->extras . "<br/>";
-echo "Color: " .$audi->color . "<br/>";
-if ($audi->isTheCarStruck == 'yes'){
-    ?>  <textarea rows="4" cols="50"> "Describe the damage on the car  </textarea> <br/> <?php
-}
-?> <input type="submit" value="save the car">  <?php
+$audi->showCarsInfo();
 
