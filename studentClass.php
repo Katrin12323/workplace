@@ -21,10 +21,14 @@ class Student
         $this->gradeLetter = $_gradeLetter;
     }
 
+    public function showStudentInfo()
+    {
+        echo "You entered the following student information: <br />";
+        echo "Student Name: " . $this->firstName . " " . $this->lastName . "<br />";
+        echo "Number: " . $this->numberInClass . " in " . $this->grade . " " . $this->gradeLetter ."<br />";
+    }
+
 }
 
 $student = new Student($_POST['firstName'], $_POST['lastName'], $_POST['numberInClass'], $_POST['grade'], $_POST['gradeLetter']);
-
-echo "You entered the following student information: <br />";
-echo "Student Name: " . $student->firstName . " " . $student->lastName . "<br />";
-echo "Number: " . $student->numberInClass . " in " . $student->grade . " " . $student->gradeLetter ."<br />";
+$student->showStudentInfo();
