@@ -16,12 +16,15 @@ class Books{
         $this->resume = "$_resume";
         $this->whatIsYourOpinion = "$_whatIsYourOpinion";
     }
+    public function showBooksInfo () {
+        echo "The book: " . $this->booksName. " is " .$this->genre;
+        echo " by " . $this->author. "<br/>";
+        echo "Year of issue of the book is: " .$this->yearOfIssue . "<br/>";
+        echo "A little part of the book: " .$this->resume. "<br/>";
+        echo "My opinion: ". $this->whatIsYourOpinion . "<br/>";
+    }
 }
 $annaKarenina = new Books($_POST['booksName'], $_POST['genre'], $_POST['author'], $_POST['yearOfIssue'], $_POST['resume'],$_POST['whatIsYourOpinion']);
+$annaKarenina->showBooksInfo();
 
-echo "The book: " . $annaKarenina->booksName. " is " .$annaKarenina->genre;
-echo " by " . $annaKarenina->author. "<br/>";
-echo "Year of issue of the book is: " .$annaKarenina->yearOfIssue . "<br/>";
-echo "A little part of the book: " .$annaKarenina->resume. "<br/>";
-echo "My opinion: ". $annaKarenina->whatIsYourOpinion . "<br/>";
 
