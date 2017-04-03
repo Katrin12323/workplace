@@ -18,11 +18,13 @@ class Newspaper {
         $this->theme = $_theme;
         $this->price = $_price;
     }
+    public function showNewspaperInfo() {
+        echo "Name of the newspaper: " . $this->name . "<br/>" ;
+        echo"Type: " . $this->type . "<br/>";
+        echo "Data of issue: " . $this->dateOfIssue . " <br />";
+        echo "Story: " . $this->theme . "<br/>";
+        echo "Price: " . $this->price . "<br/>";
+    }
 }
 $vouge = new Newspaper($_POST['name'], $_POST['type'], $_POST['dateOfIssue'], $_POST['theme'], $_POST['price']);
-
-    echo "Name of the newspaper: " . $vouge->name . "<br/>" ;
-    echo"Type: " . $vouge->type . "<br/>";
-    echo "Data of issue: " . $vouge->dateOfIssue . " <br />";
-    echo "Story: " . $vouge->theme . "<br/>";
-    echo "Price: " . $vouge->price . "<br/>";
+$vouge->showNewspaperInfo();
