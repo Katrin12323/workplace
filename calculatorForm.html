@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+
+    <form action="http://localhost/calculatorClass.php" method="POST">
+        <label for="a">A</label>
+        <input id="a" type="number" name="a" />
+
+        <select name="operation">
+            <option value="plus">+</option>
+            <option value="minus">-</option>
+            <option value="multiply">*</option>
+            <option value="divide">/</option>
+
+        </select>
+
+        <label for="b">B</label>
+        <input id="b" type="number" name="b" />
+
+        <input type="submit" value="Calculate" >
+    </form>
+
+</body>
+</html>
