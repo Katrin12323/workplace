@@ -5,17 +5,21 @@ class Baby {
     public function __construct()
     {
         $this->quantity = rand(250, 800);
-        if ($_POST['quantity'] < $this->quantity) {
+
+    }
+    public function FeedTheBaby ($milk) {
+        if ($_POST['quantity'] < $milk) {
             echo " <h2> Sorry, you are bad parent, one baby dies of hunger because of you </h2> <br/>"
             ?> <img src="crying_baby.jpg" alt="crying baby" width="300" height="300"> <?php
         }
-        elseif ( $_POST['quantity'] > $this->quantity ) {
+        elseif ( $_POST['quantity'] > $milk) {
             echo "<h1>Congratulation, you are good parent </h1> <br/>"
-            ?> <img src="happy_baby.jpg" alt="hapy baby" width="300" height="300"> <?php
+            ?> <img src="happy_baby.jpg" alt="happy baby" width="300" height="300"> <?php
         }
     }
 }
-$newBaby= new Baby($_POST['quantity']);
+$newBaby= new Baby();
+$newBaby->FeedTheBaby($_POST['quantity']);
 
 
 
