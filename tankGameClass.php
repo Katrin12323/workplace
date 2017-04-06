@@ -4,12 +4,11 @@ class Tank {
 
     public function __construct()
     {
-        $this->direction = rand(0, 1);
+        $this->direction = rand(200, 1000);
 
-        if (rand(0,1) == 0) {
+        if ($this->direction > 500) {
            $this->direction = "left";
-        }
-        else {
+        } else {
             $this->direction = "right";
         }
 
