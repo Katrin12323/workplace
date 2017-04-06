@@ -28,4 +28,3 @@ class GoalKeeper {
 
 $newGoalKeeper = new GoalKeeper();
 $newGoalKeeper->Strike($_POST['jumpPosition']);
-var_dump($_POST['jumpPosition']);
