@@ -1,5 +1,8 @@
 body {
     background-image: url("ronaldo_penalty.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 30;
     z-index: -1;
 }
 .input {
@@ -13,6 +16,14 @@ body {
 .button {
     padding-left: 80%;
 
+}
+.button input {
+    width: 100px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #9A0000;
+    font-style: italic;
+    color: #ffffff;
 }
 
 
