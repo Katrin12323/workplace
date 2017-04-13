@@ -9,7 +9,7 @@ if ($connection->connect_error) {
 $query = "SELECT * FROM newspaper;";
 $resultNewspaper = mysqli_query($connection, $query);
 while ($newspaper = $resultNewspaper->fetch_assoc()) {
-   $newspaperObject = new newspaper($newspaper['name'], $newspaper['type'], $newspaper['dateOfIssue'], $newspaper['theme'], $newspaper['price']);
+   $newspaperObject = new newspaper($newspaper['name'], $newspaper['kind'], $newspaper['dateOfIssue'], $newspaper['theme'], $newspaper['price']);
    $newspaperObject->showNewspaperInfo();
    echo "</br>";
 }
