@@ -5,7 +5,6 @@ $citizen1= new Citizen($_POST['firstName'], $_POST['fathersName'], $_POST['lastN
 $citizen1->showCitizenInfo();
 
 /* От тук надоло е кода за връзка с базата данни и записване на данните от обекта в таблизата citizen*/
-
 // Creating connection to database
 $connectionToDatabase = new mysqli('localhost', 'root', 'xaxanepozna', 'workplace');
 
