@@ -15,5 +15,5 @@ exit;
 }
 
 $insertQuery = "INSERT INTO students (firstName, lastName, numberInClass, grade, gradeLetter) 
-VALUES('$student->firstName', '$student->lastName', '$student->numberInClass', '$student->grade', '$student->gradeLetter');";
+VALUES('$student->getFirstNam()', '$student->getLastName()', '$student->getNumberInClass()', '$student->getGrade()', '$student->getGradeLetter()');";
 mysqli_query($connectionToDatabase, $insertQuery);
