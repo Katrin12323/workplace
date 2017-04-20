@@ -1,14 +1,14 @@
 <?php
 class Newspaper {
-    public $name;
+    private $name;
 
-    public $kind;
+    private $kind;
 
-    public $dateOfIssue;
+    private $dateOfIssue;
 
-    public $theme;
+    private $theme;
 
-    public $price;
+    private $price;
 
     public function __construct($_name, $_kind, $_dateOfIssue, $_theme, $_price)
     {
@@ -24,5 +24,20 @@ class Newspaper {
         echo "Data of issue: " . $this->dateOfIssue . " <br />";
         echo "Story: " . $this->theme . "<br/>";
         echo "Price: " . $this->price . "<br/>";
+    }
+    public function getName () {
+        return $this->name;
+    }
+    public function getKind () {
+        return $this->kind;
+    }
+    public function getDateOfIssue () {
+        return $this->dateOfIssue;
+    }
+    public function getTheme () {
+        return $this->theme;
+    }
+    public function getPrice () {
+        return $this->price;
     }
 }

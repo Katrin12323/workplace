@@ -1,26 +1,55 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: katrinees
- * Date: 01.03.17
- * Time: 11:11
- */
-$student_ivan = array(
-    "fname" => "Ivan",
-    "lname" => "Ivanov",
-    "rating_success" => "3",
-    "rating_discipline" => "5"
-);
-$student_petyr = array(
-    "fname" => "Petyr",
-    "lname" => "Marinov",
-    "rating_success" => "6",
-    "rating_discipline" => "2"
-);
+class Student
+{
+    private $firstName;
 
-$students = array($student_ivan, $student_petyr);
-    echo "<ol>";
-foreach ($students as $info) {
-    echo " <li> The student " . $info['fname'] ." " .$info['lname'] ." is with rating of succsess ". $info ['rating_success']." points of 10 points and rating of discipline ".$info ['rating_discipline'] ." points of 12 points <br> </li>";
-};
-    echo "</ol>";
+    private $lastName;
+
+    private $numberInClass;
+
+    private $grade;
+
+    private $gradeLetter;
+
+    public function __construct($_firstName, $_lastName, $_numberInClass, $_grade, $_gradeLetter)
+    {
+        $this->firstName = $_firstName;
+        $this->lastName = $_lastName;
+        $this->numberInClass = $_numberInClass;
+        $this->grade = $_grade;
+        $this->gradeLetter = $_gradeLetter;
+    }
+
+    public function showStudentInfo()
+    {
+        echo "You entered the following student information: <br />";
+        echo "Student Name: " . $this->firstName . " " . $this->lastName . "<br />";
+        echo "Number: " . $this->numberInClass . " in " . $this->grade . " " . $this->gradeLetter ."<br />";
+    }
+    
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    public function getNumberInClass()
+    {
+        return $this->numberInClass;
+    }
+
+    public function getGrade()
+    {
+        return $this->grade;
+    }
+
+    public function getGradeLetter()
+    {
+        return $this->gradeLetter;
+    }
+
+}
