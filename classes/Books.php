@@ -1,13 +1,13 @@
 <?php
 
 class Books {
-    public $booksName;
-    public $genre;
-    public $author;
-    public $yearOfIssue;
-    public $resume;
-    public $whatIsYourOpinion;
-    public $pages;
+    private $booksName;
+    private $genre;
+    private $author;
+    private $yearOfIssue;
+    private $resume;
+    private $whatIsYourOpinion;
+    private $pages;
 
     public function __construct($_booksName, $_genre, $_author, $_yearOfIssue, $_resume, $_whatIsYourOpinion)
     {
@@ -36,4 +36,62 @@ class Books {
         echo "A little part of the book: " .$this->resume. "<br/>";
         echo "My opinion: ". $this->whatIsYourOpinion . "<br/>";
     }
+
+    /**
+     * @return mixed
+     */
+    public function getBooksName()
+    {
+        return $this->booksName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGenre()
+    {
+        return $this->genre;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthor()
+    {
+        return $this->author;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getYearOfIssue()
+    {
+        return $this->yearOfIssue;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getResume()
+    {
+        return $this->resume;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWhatIsYourOpinion()
+    {
+        return $this->whatIsYourOpinion;
+    }
+
+    /**
+     * @return array
+     */
+    public function getPages()
+    {
+        return $this->pages;
+    }
+
+
 }
