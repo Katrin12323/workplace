@@ -1,15 +1,15 @@
 <?php
 class Student
 {
-    public $firstName;
+    private $firstName;
 
-    public $lastName;
+    private $lastName;
 
-    public $numberInClass;
+    private $numberInClass;
 
-    public $grade;
+    private $grade;
 
-    public $gradeLetter;
+    private $gradeLetter;
 
     public function __construct($_firstName, $_lastName, $_numberInClass, $_grade, $_gradeLetter)
     {
@@ -25,6 +25,31 @@ class Student
         echo "You entered the following student information: <br />";
         echo "Student Name: " . $this->firstName . " " . $this->lastName . "<br />";
         echo "Number: " . $this->numberInClass . " in " . $this->grade . " " . $this->gradeLetter ."<br />";
+    }
+    
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    public function getNumberInClass()
+    {
+        return $this->numberInClass;
+    }
+
+    public function getGrade()
+    {
+        return $this->grade;
+    }
+
+    public function getGradeLetter()
+    {
+        return $this->gradeLetter;
     }
 
 }
