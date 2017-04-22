@@ -18,7 +18,12 @@ if ($connectionToDatabase->connect_error) {
 
 /*това са имената на колоните от таблицата*/
 $insertQuery = "INSERT INTO newspaper (`name`, kind, dateOfIssue, theme, price)
+<<<<<<< HEAD
 VALUES('". $vouge->getName() ."', '" . $vouge->getKind() ."', '" . $vouge->getDateOfIssue(). "', '" .$vouge->getTheme(). "', '" .$vouge->getPrice(). "');";
+=======
+VALUES('$vouge->name', '$vouge->kind', '$vouge->dateOfIssue', '$vouge->theme', '$vouge->price');";
+
+>>>>>>> c1b6daf42a75ba359c28aa2fca3e19cf1b91e0e1
 mysqli_query($connectionToDatabase, $insertQuery);
 mysqli_close ($connectionToDatabase);
 

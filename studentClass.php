@@ -15,5 +15,9 @@ exit;
 }
 
 $insertQuery = "INSERT INTO students (firstName, lastName, numberInClass, grade, gradeLetter) 
+<<<<<<< HEAD
 VALUES('$student->getFirstName()', '$student->getLastName()', '$student->getNumberInClass()', '$student->getGrade()', '$student->getGradeLetter()');";
+=======
+VALUES('$student->getFirstNam()', '$student->getLastName()', '$student->getNumberInClass()', '$student->getGrade()', '$student->getGradeLetter()');";
+>>>>>>> c1b6daf42a75ba359c28aa2fca3e19cf1b91e0e1
 mysqli_query($connectionToDatabase, $insertQuery);
