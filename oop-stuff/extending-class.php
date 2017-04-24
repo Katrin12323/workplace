@@ -25,7 +25,7 @@ class Animal
      * @return mixed
      */
     public function getIsPredator()
-    {u
+    {
         return $this->isPredator;
     }
 

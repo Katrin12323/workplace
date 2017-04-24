@@ -1,19 +1,19 @@
 <?php
 class Citizen {
 
-    public $firstName;
+    private $firstName;
 
-    public $fathersName;
+    private $fathersName;
 
-    public $lastName;
+    private $lastName;
 
-    public $identificationNumber;
+    private $identificationNumber;
 
-    public $birthday;
+    private $birthday;
 
-    public $homeTown;
+    private $homeTown;
 
-    public $currentAddress;
+    private $currentAddress;
 
     public function __construct($_firstName,$_fathersName,$_lastName,$_identificationNumber,$_birthday,$_homeTown,$_currentAddress)
     {
@@ -31,5 +31,62 @@ class Citizen {
         echo  $this->firstName . " " . $this->fathersName . " " . $this->lastName . " " . $this->identificationNumber . "<br/>";
         echo "Born in: " . $this->homeTown . " on " . $this->birthday . " year with current address " . $this->currentAddress ."<br />";
     }
+
+    /**
+     * @return mixed
+     */
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFathersName()
+    {
+        return $this->fathersName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLastName()
+    {
+        return $this->lastName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIdentificationNumber()
+    {
+        return $this->identificationNumber;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getBirthday()
+    {
+        return $this->birthday;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHomeTown()
+    {
+        return $this->homeTown;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCurrentAddress()
+    {
+        return $this->currentAddress;
+    }
+
 
 }
