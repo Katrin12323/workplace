@@ -18,7 +18,7 @@ if ($connectionToDatabase->connect_error) {
 
                                     /*това са имената на колоните от таблицата*/
 $insertQuery = "INSERT INTO citizen (firstName, fathersName, lastName, identificationNumber, birthday, homeTown, currentAddress)
-VALUES('$citizen1->firstName', '$citizen1->fathersName', '$citizen1->lastName', '$citizen1->identificationNumber', '$citizen1->birthday', '$citizen1->homeTown', '$citizen1->currentAddress');";
+VALUES(' " . $citizen1->getFirstName() . "', ' " . $citizen1->getFathersName() . "', ' " . $citizen1->getLastName() . "', ' " . $citizen1->getIdentificationNumber() . "', ' " . $citizen1->getBirthday() . "', ' " . $citizen1->getHomeTown() . "', ' " . $citizen1->getCurrentAddress () . "');";
 
 mysqli_query($connectionToDatabase, $insertQuery);
 mysqli_close ($connectionToDatabase);
