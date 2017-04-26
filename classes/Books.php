@@ -25,6 +25,7 @@ class Books {
             'page5' => 'Lorem ipsum page 5 ...',
         );
     }
+
     public function turnOnPage($pageIndex) {
         echo $this->pages[$pageIndex];
     }
