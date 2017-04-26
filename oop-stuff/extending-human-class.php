@@ -33,10 +33,95 @@ class Human {
         $this->weight = $weight;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGender()
+    {
+        return $this->gender;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getEyesColor()
+    {
+        return $this->eyesColor;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHairColor()
+    {
+        return $this->hairColor;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeight()
+    {
+        return $this->height;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWeight()
+    {
+        return $this->weight;
+    }
+
+
     public function getInfo () {
         echo "I am Human being :) <br/>";
 
 
+    }
+
+    public function hug(Human $humanToBeHugged) {
+        echo "I am hugging " . $humanToBeHugged->getName();
+    }
+
+    public function walk($meters)
+    {
+        echo "<br />I walked " . $meters . " metres";
+    }
+
+    public function jump($height)
+    {
+        echo "<br />I jumped " . $height . " metres high";
+    }
+
+    public function fightWith(Human $humanToBeFought)
+    {
+        echo "<br />I am fighting with " . $humanToBeFought->getName();
+    }
+
+    public function talk(Human $talkTo)
+    {
+        echo "<br /> I am talking to " . $talkTo->getName();
+    }
+
+    public function makeupWith($kindOfMakeup) {
+        echo "<br/>I make my makeup with " . $kindOfMakeup . " at this moment";
+    }
+
+    public function watching($whatsWatching) {
+        echo "<br/>" .$this->getName() . " is watching " . $whatsWatching . " this morning";
+    }
+
+    public function love(Human $humanToBeLoved, $howMuch) {
+        echo "<br/>" . $this->getName() . " loves " . $humanToBeLoved->getName() . $howMuch . "!" ;
     }
 
 }
@@ -57,11 +142,10 @@ class Human {
         }
         public function getInfo()
         {
-            echo "Child : " . $this->name . " is " .$this->gender . " with " . $this->eyesColor . " eyes ";
-            echo " and " . $this->hairColor . " hair.  Height: " .$this->height." sm  and weight " .$this->weight ." kg. <br/>";
-
-
+            echo "Child : "  . $this->getName() . " is " .$this->getGender() . " with " . $this->getEyesColor() . " eyes ";
+            echo " and " . $this->getHairColor() . " hair.  Height: " .$this->getHeight()." sm  and weight " .$this->getWeight () ." kg. <br/>";
         }
+
     }
 
     class Adult extends Human {
@@ -80,19 +164,29 @@ class Human {
         }
         public function getInfo()
         {
-            echo "Adult : " . $this->name . " is " .$this->gender . " with " . $this->eyesColor . " eyes ";
-            echo " and " . $this->hairColor . " hair.  Height: " .$this->height." sm  and weight " .$this->weight ." kg. <br/>";
+            echo "Adult : "  . $this->getName() . " is " .$this->getGender() . " with " . $this->getEyesColor() . " eyes ";
+            echo " and " . $this->getHairColor() . " hair.  Height: " .$this->getHeight()." sm  and weight " .$this->getWeight () ." kg. <br/>";
 
         }
 }
 
 
 
-$newHuman = new Human();
-$newHuman->getInfo();
+$Spas = new Human("Spas", "male", "blue", "brown", "190", "80");
+$Spas->getInfo();
 
 $newChild = new Child();
 $newChild->getInfo();
 
 $newAdult = new Adult();
 $newAdult->getInfo();
+
+$newChild->hug($newAdult);
+$newChild->walk(20);
+$newChild->jump(20);
+$newChild->fightWith($newAdult);
+$newAdult->fightWith($newChild);
+$newAdult->talk($newChild);
+$newAdult->makeupWith(foundation);
+$newAdult->watching("'Coffee with Galla'");
+$newAdult->love($Spas, " soooooo much");
