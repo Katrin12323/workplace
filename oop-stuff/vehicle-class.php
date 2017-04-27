@@ -59,17 +59,20 @@
 
      public function transport($distanceWhichTheVehicleNeedsToTravel, $kilogramsWhichTheVehicleNeedsToCarry) {
 
-         if ($this->maximumKilometer >= $distanceWhichTheVehicleNeedsToTravel)
-         {
-         echo " It'll be cost you: ";
-         echo $this->pricePerKilometer*$distanceWhichTheVehicleNeedsToTravel . "$" ;
+         if ($this->maximumLoad < $kilogramsWhichTheVehicleNeedsToCarry) {
+             echo "Vehicle overloaded.";
+
+         } elseif ($this->maximumKilometer >= $distanceWhichTheVehicleNeedsToTravel) {
+             echo " It'll be cost you: ";
+             echo $this->pricePerKilometer*$distanceWhichTheVehicleNeedsToTravel . "$" ;
 
          } else {
              echo "Transportation not possible";
          }
+
      }
 
  }
 
  $Car=new Vehicle(10, 4000,500, "car");
- $Car->transport(500, 400);
+ $Car->transport(500, 600);
