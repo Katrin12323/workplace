@@ -18,11 +18,12 @@
       */
      public function __construct($pricePerKilometer, $maximumKilometer, $maximumLoad, $vehicleName)
      {
-         $this->pricePerKilometer = "10$";
-         $this->maximumKilometer = "300km";
-         $this->maximumLoad = "1000";
-         $this->vehicleName = "car";
+         $this->pricePerKilometer = $pricePerKilometer;
+         $this->maximumKilometer = $maximumKilometer;
+         $this->maximumLoad = $maximumLoad;
+         $this->vehicleName = $vehicleName;
      }
+
 
      /**
       * @return mixed
@@ -57,12 +58,21 @@
      }
 
      public function transport($distanceWhichTheVehicleNeedsToTravel, $kilogramsWhichTheVehicleNeedsToCarry) {
-         echo " It'll be cost you: ";
-         echo $this->pricePerKilometer*$distanceWhichTheVehicleNeedsToTravel ;
+
+         if ($this->maximumLoad < $kilogramsWhichTheVehicleNeedsToCarry) {
+             echo "Vehicle overloaded.";
+
+         } elseif ($this->maximumKilometer >= $distanceWhichTheVehicleNeedsToTravel) {
+             echo " It'll be cost you: ";
+             echo $this->pricePerKilometer*$distanceWhichTheVehicleNeedsToTravel . "$" ;
+
+         } else {
+             echo "Transportation not possible";
+         }
 
      }
 
  }
 
- $Car=new Vehicle();
- $Car->transport(200, 300);
+ $Car=new Vehicle(10, 4000,500, "car");
+ $Car->transport(500, 600);
