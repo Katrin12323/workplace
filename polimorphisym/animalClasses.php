@@ -2,7 +2,8 @@
 
 class Animals
 {
-   public function makeSound() {
+   public function makeSound()
+   {
 
    }
 }
