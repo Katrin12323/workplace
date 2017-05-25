@@ -12,9 +12,13 @@ class Cubic extends CI_Controller {
         $height = $this->input->post('height');
         $length = $this->input->post('length');
 
-        $data['result'] = $width*$height*$length;
+        if(is_numeric($width) && is_numeric($height) && is_numeric($length)) {
+            $data['result'] = $width * $height * $length;
 
-        $this->load->view('results_cubic', $data);
+            $this->load->view('results_cubic', $data);
+        } else {
+            $this->load->view ('cubic_error');
+        }
     }
 
 }
