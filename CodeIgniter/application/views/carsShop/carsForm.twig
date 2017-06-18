@@ -1,0 +1,26 @@
+<html>
+<head>
+
+</head>
+<body>
+<p>
+    {{ testVariable }}
+</p>
+<form action="http://localhost/CodeIgniter/index.php/Cars/saveTheNewCar" method="POST">
+
+    <label for="brand">Brand: </label><br/>
+    <input type="text" name="brand"> <br/><br/>
+
+    <label for="model"> Model: </label><br/>
+    <input type="text" name="model"><br/><br/>
+
+    <label for="year">Year: </label><br/>
+    <input type="number" name="year"><br/><br/>
+
+    <label for="color"> Color: </label><br/>
+    <input type="text" name="color"><br/><br/>
+
+    <input type="submit" value="Save the new car into the database">
+</form>
+</body>
+</html>

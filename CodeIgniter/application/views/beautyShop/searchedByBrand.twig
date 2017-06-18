@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title> </title>
+</head>
+
+<body>
+    <ol>
+    {% for searchedProductByBrand in productsByBrand %}
+        <li> {{ searchedProductByBrand.brand }}
+            {{ searchedProductByBrand.kind }},
+            {{ searchedProductByBrand.name }}
+            Collection: {{ searchedProductByBrand.collection }}
+            Price: {{ searchedProductByBrand.price }}
+            Quantity: {{ searchedProductByBrand.quantity }}
+        </li>
+    {% endfor %} <br/> <br/>
+    </ol>
+
+</body>
+
+</html>
+

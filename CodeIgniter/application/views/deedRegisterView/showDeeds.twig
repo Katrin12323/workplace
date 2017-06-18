@@ -1,0 +1,25 @@
+<html>
+<head>
+    <title> </title>
+</head>
+
+<body>
+<form action="http://localhost/CodeIgniter/index.php/Deeds/searchDeeds" method="POST">
+
+    <label for="personalNumber">Personal Number: </label><br/>
+    <input type="text" name="personalNumber"> <br/><br/>
+
+    <input type="submit" value="Search">
+    <ol>
+
+        {% for deed in deeds %}
+        <li>
+            Deed Number: {{ deed.deedNumber }};
+           Deed act number: {{ deed.actNumber }}
+        </li>
+            ---> <a href="http://localhost/CodeIgniter/index.php/Deeds/deleteDeed/{{ deed.id }}" > Delete this Deed </a>
+            ---> <a href="http://localhost/CodeIgniter/index.php/Deeds/editForm/{{ deed.id }}"> Edit the info for Deed </a>
+        {% endfor %}
+    </ol>
+</body>
+</html>

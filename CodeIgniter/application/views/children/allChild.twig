@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title> </title>
+</head>
+
+<body>
+    <ol>
+        {% for allchildren in children %}
+        <li>
+           First Name: {{ allchildren.firstName }};
+           Last name: {{ allchildren.lastName }};
+           Personal number: {{ allchildren.personalNumber }};
+           Years:  {{ allchildren.years }};
+           Diseases: {{ allchildren.diseases }}
+        </li>
+            ----<a href="http://localhost/CodeIgniter/index.php/Children/deleteChild/{{ allchildren.id }}"> Delete this child </a>
+            ----<a href="http://localhost/CodeIgniter/index.php/Children/updateForm/{{ allchildren.id }}"> Update this child </a>
+        {% endfor %}
+    </ol>
+
+</body>
+</html>

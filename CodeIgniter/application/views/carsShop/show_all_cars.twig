@@ -1,0 +1,15 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <ol>
+          {% for car in allCars %}
+              <li>{{ car.brand }}</li>
+              {{ car.model }}
+              {{ car.year }}
+              {{ car.color }}
+          {% endfor %}
+        </ol>
+    </body>
+</html>

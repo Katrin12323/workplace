@@ -1,0 +1,26 @@
+<html>
+<head>
+
+</head>
+<body>
+<form action="http://localhost/CodeIgniter/index.php/Children/{{ action }}{% if id %}/{{ id }}{% endif %}" method="POST">
+
+    <label for="firstName">First name: </label><br/>
+    <input type="text" name="firstName" value="{{ child.firstName }}"> <br/><br/>
+
+    <label for="lastName"> Last name: </label><br/>
+    <input type="text" name="lastName" value="{{ child.lastName }}"><br/><br/>
+
+    <label for="personalNumber"> Personal number: </label><br/>
+    <input type="number" name="personalNumber" value="{{ child.personalNumber }}"> <br/><br/>
+
+    <label for= "years">Years: </label><br/>
+    <input type="text" name="years" value="{{ child.years }}"><br/><br/>
+
+    <label for="diseases"> Diseases: </label><br/>
+    <input type="text" name="diseases" value="{{ child.diseases }}"><br/><br/>
+
+    <input type="submit" value="Insert">
+</form>
+</body>
+</html>

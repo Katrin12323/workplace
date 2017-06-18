@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title> </title>
+</head>
+
+<body>
+
+        <ol>
+            {% for allMagazines in magazine %}
+                <li> {{ allMagazines.name }} </li>
+                     {{ allMagazines.price }} $
+              kind:  {{ allMagazines.kind }}
+          quantity:  {{allMagazines.quantity }}
+            --- <a href="http://localhost/CodeIgniter/index.php/Magazines/deleteMagazine/{{ allMagazines.id }}"> DELETE </a>
+            {% endfor %}
+            </ol>
+</body>
+
+</html>

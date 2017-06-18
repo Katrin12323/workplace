@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title> </title>
+</head>
+<body>
+
+<form action="http://localhost/CodeIgniter/index.php/Animals/searchAnimal" method="post">
+
+    <label for="nameOfTheType"> Search by name:  </label> <br/><br>
+    <input type="text" name="nameOfTheType"> <br/><br/>
+
+
+    <label for="habitat"> Search by habitat: </label> <br/><br>
+    <input type="text" name="habitat"><br/> <br/>
+
+    <input type="submit" value="Search">
+</form>
+
+
+    <ol>
+
+            {% for allAnimals in zoo  %}
+                <li>
+            Type: {{ allAnimals.nameOfTheType }};
+            Kind: {{ allAnimals.kind }};
+           Name: {{ allAnimals.nameOfTheAnimal }};
+            Age: {{ allAnimals.age }}
+        </li>
+                ---><a href="http://localhost/CodeIgniter/index.php/Animals/deleteAnimal/{{ allAnimals.id }}" > Delete this animal </a>
+                ---><a href="http://localhost/CodeIgniter/index.php/Animals/updateForm/{{ allAnimals.id }}" > Update this animal </a>
+            {% endfor %}
+
+    </ol>
+</body>
+</html>
