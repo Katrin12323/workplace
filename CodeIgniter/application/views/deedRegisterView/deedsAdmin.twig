@@ -1,0 +1,23 @@
+<html>
+<head>
+
+</head>
+<body>
+    <form action="http://localhost/CodeIgniter/index.php/Deeds/{{ action }}{% if id %}/{{ id }}{% endif %}" method="POST">
+
+        <label for="personalNumber">Personal Number: </label><br/>
+        <input type="text" name="personalNumber" value = "{{ deed.personalNumber }}"> <br/><br/>
+
+        <label for="type"> Type of deed: </label><br/>
+        <input type="text" name="type" value = "{{ deed.type }}"><br/><br/>
+
+        <label for="actNumber">Act number </label><br/>
+        <input type="number" name="actNumber" value = "{{ deed.actNumber }}"><br/><br/>
+
+        <label for="deedNumber"> Deed number </label><br/>
+        <input type="number" name="deedNumber" value = "{{ deed.deedNumber }}"><br/><br/>
+
+        <input type="submit" value="{{ button }}">
+    </form>
+</body>
+</html>

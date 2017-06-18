@@ -1,0 +1,15 @@
+<html>
+<head>
+
+</head>
+<body>
+<ol>
+    {% for videotape in videotapes %}
+        <li>{{ videotape.title }}</li>
+        {{ videotape.year }}
+        {{ videotape.genre }}
+         --- <a href="http://localhost/CodeIgniter/index.php/Vteka/deleteVideoTape/{{ videotape.id }}">DELETE</a>
+    {% endfor %}
+</ol>
+</body>
+</html>

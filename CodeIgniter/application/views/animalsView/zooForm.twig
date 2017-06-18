@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Zoo </title>
+</head>
+<body>
+
+<form action="http://localhost/CodeIgniter/index.php/Animals/{{ action }}{% if id %}/{{ id }}{% endif %}" method="post">
+
+    <label for="nameOfTheType"> Name:  </label> <br/><br>
+    <input type="text" name="nameOfTheType" value="{{ zoo.nameOfTheType }}"> <br/><br/>
+
+    <label for="kind"> Kind: </label> <br/><br>
+    <input type="text" name="kind" value="{{ zoo.kind }}"><br/> <br/>
+
+    <label for="habitat"> Habitat: </label> <br/><br>
+    <input type="text" name="habitat" value = "{{ zoo.habitat }}"><br/> <br/>
+
+    <label for="nameOfTheAnimal"> Name of the animal: </label> <br/><br>
+    <input type="text" name="nameOfTheAnimal" value = "{{ zoo.nameOfTheAnimal }}"><br/> <br/>
+
+    <label for="age"> Age: </label> <br/><br>
+    <input type="text" name="age" value = "{{ zoo.age }}"><br/> <br/>
+
+    <input type="submit" value="{{ button }}">
+</form>
+
+</body>

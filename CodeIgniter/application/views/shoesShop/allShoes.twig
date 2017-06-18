@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title> all shoes</title>
+</head>
+
+<body>
+<form action="http://localhost/CodeIgniter/index.php/ShoesShop/searchShoes" method="post">
+
+    <label for="type"> Search by type </label>
+    <input type="text" name="type" value="{{ type }}">
+    <input type="submit" value="Search">
+</form>
+
+    <ol>
+        {% for allShoes in shoes %}
+        <li>{{ allShoes.brand }},
+        type: {{ allShoes.type }},
+        size: {{ allShoes.size }},
+        color: {{ allShoes.color }},
+        price: {{ allShoes.price }} $,
+        quantity: {{ allShoes.quantity }}</li>
+            ---><a href="http://localhost/CodeIgniter/index.php/ShoesShop/deleteShoes/{{ allShoes.id }}">Delete this product </a>
+            ---><a href="http://localhost/CodeIgniter/index.php/ShoesShop/updateForm/{{ allShoes.id }}"> Update this product </a>
+        {% endfor %}
+    </ol>
+</body>
+</html>
