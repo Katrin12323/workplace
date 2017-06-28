@@ -1,20 +1,23 @@
 <html>
 <head>
     <title> </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ baseUrl }}/application/assets/js/children.js"></script>
 </head>
 
 <body>
     <ol>
         {% for allchildren in children %}
-        <li>
+        <li class="post-{{ allchildren.id }}">
            First Name: {{ allchildren.firstName }};
            Last name: {{ allchildren.lastName }};
            Personal number: {{ allchildren.personalNumber }};
            Years:  {{ allchildren.years }};
-           Diseases: {{ allchildren.diseases }}
+           Diseases: {{ allchildren.diseases }}<br/>
+
+            <button class="post-delete" post-id = "{{ allchildren.id }}"> Delete this child </button>
+            <a href="http://localhost/CodeIgniter/index.php/Children/updateForm/{{ allchildren.id }}"> Update this child </a>
         </li>
-            ----<a href="http://localhost/CodeIgniter/index.php/Children/deleteChild/{{ allchildren.id }}"> Delete this child </a>
-            ----<a href="http://localhost/CodeIgniter/index.php/Children/updateForm/{{ allchildren.id }}"> Update this child </a>
         {% endfor %}
     </ol>
 

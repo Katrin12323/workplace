@@ -1,6 +1,8 @@
 <html>
 <head>
     <title> </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ baseUrl }}/application/assets/js/deeds.js"></script>
 </head>
 
 <body>
@@ -10,15 +12,17 @@
     <input type="text" name="personalNumber"> <br/><br/>
 
     <input type="submit" value="Search">
+</form>
     <ol>
 
         {% for deed in deeds %}
-        <li>
+        <li class="post-{{ deed.id }}">
             Deed Number: {{ deed.deedNumber }};
            Deed act number: {{ deed.actNumber }}
-        </li>
-            ---> <a href="http://localhost/CodeIgniter/index.php/Deeds/deleteDeed/{{ deed.id }}" > Delete this Deed </a>
+
+            ---> <button class="post-delete" post-id="{{ deed.id }}"> Delete this Deed </button>
             ---> <a href="http://localhost/CodeIgniter/index.php/Deeds/editForm/{{ deed.id }}"> Edit the info for Deed </a>
+            </li>
         {% endfor %}
     </ol>
 </body>

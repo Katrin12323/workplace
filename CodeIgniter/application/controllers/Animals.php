@@ -5,6 +5,7 @@ class Animals extends CI_Controller
 {
     public function index()
      {
+         $data['baseUrl'] = base_url();
          $data['action'] = 'saveNewAnimal';
          $data['button'] = 'Save';
          $this->twig->display('animalsView/zooForm');
@@ -12,6 +13,7 @@ class Animals extends CI_Controller
 
     public function saveNewAnimal()
         {
+            $data['baseUrl'] = base_url();
             $this->load->model('animal');
 
             $this->animal->nameOfTheType = $this->input->post('nameOfTheType');
@@ -26,6 +28,7 @@ class Animals extends CI_Controller
         }
 
     public function searchAnimal() {
+        $data['baseUrl'] = base_url();
         $this->load->model('animal');
 
         $nameOfTheType = $this->input->post('nameOfTheType');
@@ -46,6 +49,7 @@ class Animals extends CI_Controller
 
     public function listAnimals()
     {
+        $data['baseUrl'] = base_url();
         $this->load->model('animal');
         $data['zoo'] = $this->animal->getAllAnimals();
 
@@ -54,6 +58,7 @@ class Animals extends CI_Controller
 
     public function deleteAnimal($id)
     {
+        $data['baseUrl'] = base_url();
         $this->load->model('animal');
 
         $this->animal->deleteById($id);
@@ -65,6 +70,7 @@ class Animals extends CI_Controller
 
     public function updateForm($id)
     {
+        $data['baseUrl'] = base_url();
         $data['action'] = 'updateAnimal';
         $data['button'] = 'update info';
         $this->load->model('animal');
@@ -78,6 +84,7 @@ class Animals extends CI_Controller
 
     public function updateAnimal($id)
     {
+        $data['baseUrl'] = base_url();
         $this->load->model('animal');
 
         $this->animal->nameOfTheType = $this->input->post('nameOfTheType');

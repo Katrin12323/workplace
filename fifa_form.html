@@ -4,15 +4,17 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="fifa.css">
     <title>Fifa - cuz it'll make Ronaldo cry </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="fifa.js"></script>
 </head>
 
-<form action="http://localhost/fifa_class.php" method="post">
+<form id="fifaForm" action="http://localhost/fifa_class.php" method="post">
     <div class="input">
-    <label for="jumpPosition"> Choose a strike position: </label> <br/><br/>
-    <input type="radio" name="jumpPosition" value="upperLeft"> Upper left <br/>
-    <input type="radio" name="jumpPosition" value="upperRight"> Upper right <br/>
-    <input type="radio" name="jumpPosition" value="downLeft"> Down left <br/>
-    <input type="radio" name="jumpPosition" value="downRight"> Down right <br/> <br/>
+        <label for="jumpPosition"> Choose a strike position: </label> <br/><br/>
+        <input type="radio" name="jumpPosition" value="upperLeft"> Upper left <br/>
+        <input type="radio" name="jumpPosition" value="upperRight"> Upper right <br/>
+        <input type="radio" name="jumpPosition" value="downLeft"> Down left <br/>
+        <input type="radio" name="jumpPosition" value="downRight"> Down right <br/> <br/>
     </div>
 
     <div class="button">

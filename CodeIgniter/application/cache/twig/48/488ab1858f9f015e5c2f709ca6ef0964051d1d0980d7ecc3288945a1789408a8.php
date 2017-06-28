@@ -19,6 +19,11 @@ class __TwigTemplate_f98d6ce2c8fc5bf7bc13bbbd5cdbe75e63739a62217c9aa2e09826efd52
         echo "<html>
 <head>
     <title> all shoes</title>
+    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
+    <script src=\"";
+        // line 5
+        echo twig_escape_filter($this->env, (isset($context["baseUrl"]) ? $context["baseUrl"] : null), "html", null, true);
+        echo "/application/assets/js/shoesShop.js\"></script>
 </head>
 
 <body>
@@ -26,7 +31,7 @@ class __TwigTemplate_f98d6ce2c8fc5bf7bc13bbbd5cdbe75e63739a62217c9aa2e09826efd52
 
     <label for=\"type\"> Search by type </label>
     <input type=\"text\" name=\"type\" value=\"";
-        // line 10
+        // line 12
         echo twig_escape_filter($this->env, (isset($context["type"]) ? $context["type"] : null), "html", null, true);
         echo "\">
     <input type=\"submit\" value=\"Search\">
@@ -34,48 +39,53 @@ class __TwigTemplate_f98d6ce2c8fc5bf7bc13bbbd5cdbe75e63739a62217c9aa2e09826efd52
 
     <ol>
         ";
-        // line 15
+        // line 17
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["shoes"]) ? $context["shoes"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["allShoes"]) {
-            // line 16
-            echo "        <li>";
+            // line 18
+            echo "        <li class=\"shoesShop-";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["allShoes"], "id", array()), "html", null, true);
+            echo "\">
+            ";
+            // line 19
             echo twig_escape_filter($this->env, $this->getAttribute($context["allShoes"], "brand", array()), "html", null, true);
             echo ",
         type: ";
-            // line 17
+            // line 20
             echo twig_escape_filter($this->env, $this->getAttribute($context["allShoes"], "type", array()), "html", null, true);
             echo ",
         size: ";
-            // line 18
+            // line 21
             echo twig_escape_filter($this->env, $this->getAttribute($context["allShoes"], "size", array()), "html", null, true);
             echo ",
         color: ";
-            // line 19
+            // line 22
             echo twig_escape_filter($this->env, $this->getAttribute($context["allShoes"], "color", array()), "html", null, true);
             echo ",
         price: ";
-            // line 20
+            // line 23
             echo twig_escape_filter($this->env, $this->getAttribute($context["allShoes"], "price", array()), "html", null, true);
             echo " \$,
         quantity: ";
-            // line 21
+            // line 24
             echo twig_escape_filter($this->env, $this->getAttribute($context["allShoes"], "quantity", array()), "html", null, true);
-            echo "</li>
-            ---><a href=\"http://localhost/CodeIgniter/index.php/ShoesShop/deleteShoes/";
-            // line 22
+            echo "
+            ---><button class=\"delete-button\" shoesShop-id = \"";
+            // line 25
             echo twig_escape_filter($this->env, $this->getAttribute($context["allShoes"], "id", array()), "html", null, true);
-            echo "\">Delete this product </a>
+            echo "\">Delete this product </button>
             ---><a href=\"http://localhost/CodeIgniter/index.php/ShoesShop/updateForm/";
-            // line 23
+            // line 26
             echo twig_escape_filter($this->env, $this->getAttribute($context["allShoes"], "id", array()), "html", null, true);
             echo "\"> Update this product </a>
+        </li>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['allShoes'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
+        // line 29
         echo "    </ol>
 </body>
 </html>";
@@ -93,7 +103,7 @@ class __TwigTemplate_f98d6ce2c8fc5bf7bc13bbbd5cdbe75e63739a62217c9aa2e09826efd52
 
     public function getDebugInfo()
     {
-        return array (  79 => 25,  71 => 23,  67 => 22,  63 => 21,  59 => 20,  55 => 19,  51 => 18,  47 => 17,  42 => 16,  38 => 15,  30 => 10,  19 => 1,);
+        return array (  89 => 29,  80 => 26,  76 => 25,  72 => 24,  68 => 23,  64 => 22,  60 => 21,  56 => 20,  52 => 19,  47 => 18,  43 => 17,  35 => 12,  25 => 5,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -109,6 +119,8 @@ class __TwigTemplate_f98d6ce2c8fc5bf7bc13bbbd5cdbe75e63739a62217c9aa2e09826efd52
         return new Twig_Source("<html>
 <head>
     <title> all shoes</title>
+    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
+    <script src=\"{{ baseUrl }}/application/assets/js/shoesShop.js\"></script>
 </head>
 
 <body>
@@ -121,14 +133,16 @@ class __TwigTemplate_f98d6ce2c8fc5bf7bc13bbbd5cdbe75e63739a62217c9aa2e09826efd52
 
     <ol>
         {% for allShoes in shoes %}
-        <li>{{ allShoes.brand }},
+        <li class=\"shoesShop-{{ allShoes.id }}\">
+            {{ allShoes.brand }},
         type: {{ allShoes.type }},
         size: {{ allShoes.size }},
         color: {{ allShoes.color }},
         price: {{ allShoes.price }} \$,
-        quantity: {{ allShoes.quantity }}</li>
-            ---><a href=\"http://localhost/CodeIgniter/index.php/ShoesShop/deleteShoes/{{ allShoes.id }}\">Delete this product </a>
+        quantity: {{ allShoes.quantity }}
+            ---><button class=\"delete-button\" shoesShop-id = \"{{ allShoes.id }}\">Delete this product </button>
             ---><a href=\"http://localhost/CodeIgniter/index.php/ShoesShop/updateForm/{{ allShoes.id }}\"> Update this product </a>
+        </li>
         {% endfor %}
     </ol>
 </body>

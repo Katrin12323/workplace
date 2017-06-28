@@ -19,52 +19,60 @@ class __TwigTemplate_116988e423e9ccb58f4b07f19cbbc0636abbf728ae1275b40b3468c2b50
         echo "<html>
 <head>
     <title> </title>
+    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
+    <script src=\"";
+        // line 5
+        echo twig_escape_filter($this->env, (isset($context["baseUrl"]) ? $context["baseUrl"] : null), "html", null, true);
+        echo "/application/assets/js/children.js\"></script>
 </head>
 
 <body>
     <ol>
         ";
-        // line 8
+        // line 10
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["children"]) ? $context["children"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["allchildren"]) {
-            // line 9
-            echo "        <li>
+            // line 11
+            echo "        <li class=\"post-";
+            echo twig_escape_filter($this->env, $this->getAttribute($context["allchildren"], "id", array()), "html", null, true);
+            echo "\">
            First Name: ";
-            // line 10
+            // line 12
             echo twig_escape_filter($this->env, $this->getAttribute($context["allchildren"], "firstName", array()), "html", null, true);
             echo ";
            Last name: ";
-            // line 11
+            // line 13
             echo twig_escape_filter($this->env, $this->getAttribute($context["allchildren"], "lastName", array()), "html", null, true);
             echo ";
            Personal number: ";
-            // line 12
+            // line 14
             echo twig_escape_filter($this->env, $this->getAttribute($context["allchildren"], "personalNumber", array()), "html", null, true);
             echo ";
            Years:  ";
-            // line 13
+            // line 15
             echo twig_escape_filter($this->env, $this->getAttribute($context["allchildren"], "years", array()), "html", null, true);
             echo ";
            Diseases: ";
-            // line 14
-            echo twig_escape_filter($this->env, $this->getAttribute($context["allchildren"], "diseases", array()), "html", null, true);
-            echo "
-        </li>
-            ----<a href=\"http://localhost/CodeIgniter/index.php/Children/deleteChild/";
             // line 16
+            echo twig_escape_filter($this->env, $this->getAttribute($context["allchildren"], "diseases", array()), "html", null, true);
+            echo "<br/>
+
+            <button class=\"post-delete\" post-id = \"";
+            // line 18
             echo twig_escape_filter($this->env, $this->getAttribute($context["allchildren"], "id", array()), "html", null, true);
-            echo "\"> Delete this child </a>
-            ----<a href=\"http://localhost/CodeIgniter/index.php/Children/updateForm/";
-            // line 17
+            echo "\"> Delete this child </button>
+            <a href=\"http://localhost/CodeIgniter/index.php/Children/updateForm/";
+            // line 19
             echo twig_escape_filter($this->env, $this->getAttribute($context["allchildren"], "id", array()), "html", null, true);
             echo "\"> Update this child </a>
+        </li>
         ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['allchildren'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 19
+        // line 22
         echo "    </ol>
 
 </body>
@@ -83,7 +91,7 @@ class __TwigTemplate_116988e423e9ccb58f4b07f19cbbc0636abbf728ae1275b40b3468c2b50
 
     public function getDebugInfo()
     {
-        return array (  68 => 19,  60 => 17,  56 => 16,  51 => 14,  47 => 13,  43 => 12,  39 => 11,  35 => 10,  32 => 9,  28 => 8,  19 => 1,);
+        return array (  76 => 22,  67 => 19,  63 => 18,  58 => 16,  54 => 15,  50 => 14,  46 => 13,  42 => 12,  37 => 11,  33 => 10,  25 => 5,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -99,20 +107,23 @@ class __TwigTemplate_116988e423e9ccb58f4b07f19cbbc0636abbf728ae1275b40b3468c2b50
         return new Twig_Source("<html>
 <head>
     <title> </title>
+    <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
+    <script src=\"{{ baseUrl }}/application/assets/js/children.js\"></script>
 </head>
 
 <body>
     <ol>
         {% for allchildren in children %}
-        <li>
+        <li class=\"post-{{ allchildren.id }}\">
            First Name: {{ allchildren.firstName }};
            Last name: {{ allchildren.lastName }};
            Personal number: {{ allchildren.personalNumber }};
            Years:  {{ allchildren.years }};
-           Diseases: {{ allchildren.diseases }}
+           Diseases: {{ allchildren.diseases }}<br/>
+
+            <button class=\"post-delete\" post-id = \"{{ allchildren.id }}\"> Delete this child </button>
+            <a href=\"http://localhost/CodeIgniter/index.php/Children/updateForm/{{ allchildren.id }}\"> Update this child </a>
         </li>
-            ----<a href=\"http://localhost/CodeIgniter/index.php/Children/deleteChild/{{ allchildren.id }}\"> Delete this child </a>
-            ----<a href=\"http://localhost/CodeIgniter/index.php/Children/updateForm/{{ allchildren.id }}\"> Update this child </a>
         {% endfor %}
     </ol>
 

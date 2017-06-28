@@ -1,0 +1,23 @@
+<html>
+<head>
+    <title> </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ baseUrl }}/application/assets/js/students.js"></script>
+</head>
+
+<body>
+<ol>
+    {% for allStudents in student %}
+        <li class="student-{{ allStudents.id }}">
+            First name: {{ allStudents.firstName }};
+            Last name: {{ allStudents.lastName }};
+            Class: {{ allStudents.class }};
+            Success: {{ allStudents.success }};<br>
+
+            <button class="delete-button" student-id="{{ allStudents.id }}"> Delete the information for student </button>
+    </li>
+    {% endfor %}
+
+</ol>
+</body>
+</html>

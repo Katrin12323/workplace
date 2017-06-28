@@ -2,19 +2,6 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Shoes extends CI_Model {
-
-    public $brand;
-
-    public $type;
-
-    public $size;
-
-    public $color;
-
-    public $price;
-
-    public $quantity;
-
     public function insertShoes()
     {
         $this->db->insert('shoesShop', $this);
@@ -46,9 +33,9 @@ class Shoes extends CI_Model {
         return $query->first_row();
     }
 
-    public function update($id)
+    public function update($shoe,$id)
     {
-        $this->db->update('shoesShop', $this, array('id' => $id));
+        $this->db->update('shoesShop', $shoe, array('id' => $id));
     }
 }
 

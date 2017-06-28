@@ -6,12 +6,14 @@ class Children extends CI_Controller
     public function index()
     {
         $data['action'] = 'saveNewChild';
+        $data['baseUrl'] = base_url();
         $this->twig->display('children/childForm');
     }
 
     public function saveNewChild() {
 
         $this->load->model('child');
+        $data['baseUrl'] = base_url();
 
         $this->child->firstName = $this->input->post('firstName');
         $this->child->lastName = $this->input->post('lastName');
@@ -34,14 +36,18 @@ class Children extends CI_Controller
 
         $data['children'] = $this->child->getAllChild();
 
+        $data['baseUrl'] = base_url();
+
         $this->twig->display('children/allChild', $data);
     }
 
     public function search() {
+        $data['baseUrl'] = base_url();
         $this->twig->display('children/searchChild');
     }
 
     public function searchChild() {
+        $data['baseUrl'] = base_url();
         $this->load->model('child');
         $personalNumber = $this->input->post('personalNumber');
 
@@ -52,6 +58,7 @@ class Children extends CI_Controller
 
     public function deleteChild($id)
     {
+        $data['baseUrl'] = base_url();
         $this->load->model('child');
 
         $this->child->deleteChildById($id);
@@ -65,7 +72,7 @@ class Children extends CI_Controller
     {
         $data['action'] = 'updateChildInfo';
         $this->load->model('child');
-
+        $data['baseUrl'] = base_url();
         $data['child'] = $this->child->getById($id);
         $data['id'] = $id;
 
@@ -80,7 +87,7 @@ class Children extends CI_Controller
         $this->child->personalNumber = $this->input->post('personalNumber');
         $this->child->years = $this->input->post('years');
         $this->child->diseases = $this->input->post('diseases');
-
+        $data['baseUrl'] = base_url();
         $this->child->update($id);
 
         $data['children'] = $this->child->getAllChild();

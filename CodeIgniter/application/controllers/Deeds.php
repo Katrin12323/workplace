@@ -44,6 +44,7 @@ class Deeds extends CI_Controller
 
     public function listDeeds()
     {
+        $data['baseUrl'] = base_url();
         $this->load->model('deed');
 
         $data['deeds'] = $this->deed->getAllDeeds();
@@ -78,13 +79,14 @@ class Deeds extends CI_Controller
     public function editDeed($id)
     {
         $this->load->model('deed');
+        $deed = array(
+            'personalNumber' => $this->input->post('personalNumber'),
+            'type' => $this->input->post('type'),
+            'actNumber' => $this->input->post('actNumber'),
+            'deedNumber' => $this->input->post('deedNumber'),
+        );
 
-        $this->deed->personalNumber = $this->input->post('personalNumber');
-        $this->deed->type = $this->input->post('type');
-        $this->deed->actNumber = $this->input->post('actNumber');
-        $this->deed->deedNumber = $this->input->post('deedNumber');
-
-        $this->deed->updateById($id);
+        $this->deed->updateById($deed, $id);
 
         $data['deeds'] = $this->deed->getAllDeeds();
 

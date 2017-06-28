@@ -3,11 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Megazine extends CI_Model {
 
-    public $name;
-    public $price;
-    public $kind;
-    public $quantity;
-
     public function insertNewMagazine() {
         $this->db->insert('magazines', $this);
     }
@@ -15,12 +10,12 @@ class Megazine extends CI_Model {
     public function searchByName($name) {
         $query = $this->db->get_where('magazines', array('name' => $name));
 
-        return $query->first_row();
+        return $query->result_array();
     }
 
     public function getById($id)
     {
-        $query = $this->db->get_where('magazinees', array('id' => $id));
+        $query = $this->db->get_where('magazines', array('id' => $id));
 
         return $query->first_row();
     }
@@ -35,9 +30,9 @@ class Megazine extends CI_Model {
         $this->db->delete('magazines', array('id' => $id));
     }
 
-    public function updateById($id)
+    public function updateById($id,$magazine )
     {
-        $this->db->update('magazines', array('id' => $id));
+        $this->db->update('magazines',$magazine, array('id' => $id));
     }
 
 }

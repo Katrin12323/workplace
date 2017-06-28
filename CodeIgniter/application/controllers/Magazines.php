@@ -6,7 +6,7 @@ class Magazines extends CI_Controller {
     public function index() {
         $data['action'] = 'saveMagazines';
 
-        $this->twig->display('magazinForm', $data);
+        $this->twig->display('megazines/magazinForm', $data);
     }
 
     public function saveMagazines() {
@@ -20,13 +20,7 @@ class Magazines extends CI_Controller {
 
         $this->megazine->insertNewMagazine();
 
-        $this->twig->display('savedMagazine');
-    }
-
-    public function searchForm() {
-        $data['action'] = 'searchMagazines';
-
-        $this->twig->display('magazinForm', $data);
+        $this->twig->display('megazines/savedMagazine');
     }
 
     public function searchMagazines() {
@@ -37,11 +31,11 @@ class Magazines extends CI_Controller {
 
         if ($name) {
             $data['magazine'] = $this->megazine->searchByName($name);
-        }  else {
+        } else {
             $data['magazine'] = array();
         }
 
-        $this->twig->display('seachedMagazines', $data);
+        $this->twig->display('megazines/allMagazines', $data);
     }
 
     public function listMagazines() {
@@ -50,7 +44,7 @@ class Magazines extends CI_Controller {
 
         $data['magazine'] = $this->megazine->getAllMagazines();
 
-        $this->twig->display('allMagazines', $data);
+        $this->twig->display('megazines/allMagazines', $data);
         }
 
     public function deleteMagazine($id) {
@@ -61,16 +55,33 @@ class Magazines extends CI_Controller {
 
         $data['magazine'] = $this->megazine->getAllMagazines();
 
-        $this->twig->display('allMagazines', $data);
+        $this->twig->display('megazines/allMagazines', $data);
     }
 
     public function updateForm($id)
     {
+        $data['action'] = 'updateMagazine';
         $this->load->model('megazine');
 
-        $data['magazine'] = $this->megazine->updateById($id);
+        $data['magazine'] = $this->megazine->getById($id);
+        $data['id'] = $id;
 
+        $this->twig->display('megazines/magazinForm', $data);
     }
 
+    public function updateMagazine ($id)
+    {
+        $this->load->model('megazine');
+        $magazine = array(
+        'name' => $this->input->post('name'),
+        'price' => $this->input->post('price'),
+        'kind' => $this->input->post('kind'),
+        'quantity' => $this->input->post('quantity')
+    );
+         $this->megazine->updateById($id, $magazine);
 
+        $data['magazine'] = $this->megazine->getAllMagazines();
+
+        $this->twig->display('megazines/allMagazines', $data);
+    }
 }

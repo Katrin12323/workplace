@@ -5,7 +5,7 @@
 </head>
 
 <body>
-<form action="http://localhost/CodeIgniter/index.php/Supermarket/saveProduct" method="post">
+<form action="http://localhost/CodeIgniter/index.php/Supermarket/{{ action }}{% if id %}/{{ id }}{% endif %}" method="post">
 
     <label for="productName"> Product name </label><br/>
     <input type="text" name="productName"> <br/><br/>
@@ -19,7 +19,7 @@
     <label for="quantity"> Quantity:  </label><br/>
     <input type="number" name="quantity"> <br/> <br/>
 
-    <input type="submit" value="Save">
+    <input type="submit" value="{{ button }}">
 
 </form>
 </body>

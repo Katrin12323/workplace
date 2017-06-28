@@ -26,6 +26,8 @@ class ShoesShop extends CI_Controller
 
     public function listShoes()
     {
+        $data['baseUrl'] = base_url();
+
         $this->load->model('shoes');
 
         $data['shoes']=$this->shoes->getAllShoes();
@@ -35,6 +37,8 @@ class ShoesShop extends CI_Controller
 
     public function deleteShoes($id)
     {
+        $data['baseUrl'] = base_url();
+
         $this->load->model('shoes');
 
         $this->shoes->deleteShoesById($id);
@@ -75,15 +79,18 @@ class ShoesShop extends CI_Controller
     public function updateProduct($id)
     {
         $this->load->model('shoes');
-
-        $this->shoes->brand = $this->input->post('brand');
-        $this->shoes->type = $this->input->post('type');
-        $this->shoes->size = $this->input->post('size');
-        $this->shoes->color = $this->input->post('color');
-        $this->shoes->price = $this->input->post('price');
-        $this->shoes->quantity = $this->input->post('quantity');
-
-        $this->shoes->update($id);
+        $data['baseUrl'] = base_url();
+        
+        $shoe = array(
+            'brand' => $this->input->post('brand'),
+            'type' => $this->input->post('type'),
+            'size' => $this->input->post('size'),
+            'color' => $this->input->post('color'),
+            'price' => $this->input->post('price'),
+            'quantity' => $this->input->post('quantity')
+        );
+        
+        $this->shoes->update($shoe,$id);
 
         $data['shoes'] = $this->shoes->getAllShoes();
 

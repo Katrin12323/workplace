@@ -24,6 +24,7 @@ class BeautyShop extends CI_Controller {
     }
 
     public function listProducts(){
+        $data['baseUrl'] = base_url();
         $this->load->model('beautyProduct');
 
         $data['beautyProducts'] = $this->beautyProduct->getAllProduct();
@@ -47,6 +48,7 @@ class BeautyShop extends CI_Controller {
     }
 
     public function deleteBeautyProducts($id) {
+
 
         $this->load->model('beautyProduct');
 

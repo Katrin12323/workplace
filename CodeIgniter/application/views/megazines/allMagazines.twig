@@ -4,7 +4,14 @@
 </head>
 
 <body>
+<h2>Search</h2>
+<form action="http://localhost/CodeIgniter/index.php/Magazines/searchMagazines" method="post">
 
+    <label for="name">Search by name  </label><br/>
+    <input type="text" name="name" value="{{ name }}"> <br/><br/>
+
+    <input type="submit" value="search">
+</form>
         <ol>
             {% for allMagazines in magazine %}
                 <li> {{ allMagazines.name }} </li>
@@ -12,6 +19,7 @@
               kind:  {{ allMagazines.kind }}
           quantity:  {{allMagazines.quantity }}
             --- <a href="http://localhost/CodeIgniter/index.php/Magazines/deleteMagazine/{{ allMagazines.id }}"> DELETE </a>
+            --- <a href="http://localhost/CodeIgniter/index.php/Magazines/updateForm/{{ allMagazines.id }}"> UPDATE </a>
             {% endfor %}
             </ol>
 </body>

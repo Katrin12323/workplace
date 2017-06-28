@@ -1,7 +1,9 @@
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 
 <head>
     <title> </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ baseUrl }}/application/assets/js/animal.js"></script>
 </head>
 <body>
 
@@ -19,16 +21,16 @@
 
 
     <ol>
-
             {% for allAnimals in zoo  %}
-                <li>
+                <li class="post-{{ allAnimals.id }}">
             Type: {{ allAnimals.nameOfTheType }};
             Kind: {{ allAnimals.kind }};
            Name: {{ allAnimals.nameOfTheAnimal }};
-            Age: {{ allAnimals.age }}
-        </li>
-                ---><a href="http://localhost/CodeIgniter/index.php/Animals/deleteAnimal/{{ allAnimals.id }}" > Delete this animal </a>
+            Age: {{ allAnimals.age }}<br/>
+
+                <button class="post-delete" post-id="{{ allAnimals.id }}" > Delete this animal </button>
                 ---><a href="http://localhost/CodeIgniter/index.php/Animals/updateForm/{{ allAnimals.id }}" > Update this animal </a>
+                </li><br/>
             {% endfor %}
 
     </ol>

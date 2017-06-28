@@ -68,8 +68,6 @@ class __TwigTemplate_71d9fec8152494dd8286f77e13b2f2c68cc11b514bb6a1a08db76df0385
 
         <input type=\"submit\" value=\"Save\">
 
-
-
     </form>
 </body>
 </html>";
@@ -126,8 +124,6 @@ class __TwigTemplate_71d9fec8152494dd8286f77e13b2f2c68cc11b514bb6a1a08db76df0385
         <input type=\"text\" name=\"quantity\" value=\"{{ shoes.quantity }}\"><br/><br/>
 
         <input type=\"submit\" value=\"Save\">
-
-
 
     </form>
 </body>

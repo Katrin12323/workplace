@@ -30,11 +30,18 @@ class Product extends CI_Model {
 
         return $query->result_array();
     }
-    public function getVideotape() {
+    public function getProducts() {
 
-        $query = $this->db->get('vteka');
+        $query = $this->db->get('supermarket');
 
         return $query->result_array();
+    }
+    
+    public function getById($id) {
+        
+        $query = $this->db->get_where('supermarket', array('id' => $id));
+        
+        return $query->first_row();
     }
 
     public function deleteById ($id) {

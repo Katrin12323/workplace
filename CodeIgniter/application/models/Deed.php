@@ -3,11 +3,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Deed extends CI_Model
 {
-    public $personalNumber;
-    public $type;
-    public $actNumber;
-    public $deedNumber;
-
     public function insertDeed()
     {
         $this->db->insert('deeds', $this);
@@ -38,8 +33,8 @@ class Deed extends CI_Model
         $this->db->delete('deeds', array('id' => $id));
     }
 
-    public function updateById($id)
+    public function updateById($deed, $id)
     {
-        $this->db->update('deeds', $this, array('id' => $id));
+        $this->db->update('deeds', $deed, array('id' => $id));
     }
 }

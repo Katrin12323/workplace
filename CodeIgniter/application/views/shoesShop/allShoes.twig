@@ -1,6 +1,8 @@
 <html>
 <head>
     <title> all shoes</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="{{ baseUrl }}/application/assets/js/shoesShop.js"></script>
 </head>
 
 <body>
@@ -13,14 +15,16 @@
 
     <ol>
         {% for allShoes in shoes %}
-        <li>{{ allShoes.brand }},
+        <li class="shoesShop-{{ allShoes.id }}">
+            {{ allShoes.brand }},
         type: {{ allShoes.type }},
         size: {{ allShoes.size }},
         color: {{ allShoes.color }},
         price: {{ allShoes.price }} $,
-        quantity: {{ allShoes.quantity }}</li>
-            ---><a href="http://localhost/CodeIgniter/index.php/ShoesShop/deleteShoes/{{ allShoes.id }}">Delete this product </a>
+        quantity: {{ allShoes.quantity }}
+            ---><button class="delete-button" shoesShop-id = "{{ allShoes.id }}">Delete this product </button>
             ---><a href="http://localhost/CodeIgniter/index.php/ShoesShop/updateForm/{{ allShoes.id }}"> Update this product </a>
+        </li>
         {% endfor %}
     </ol>
 </body>
