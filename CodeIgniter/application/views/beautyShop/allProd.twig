@@ -24,11 +24,16 @@
             {{ allBeautyProducts.name }}
             Collection: {{ allBeautyProducts.collection }}
             Price: {{ allBeautyProducts.price }}
-            Quantity: {{ allBeautyProducts.quantity }}<br/>
+            Quantity: {{ allBeautyProducts.quantity }}
+
+            <form action="http://localhost/CodeIgniter/index.php/BeautyShopBasket/addToBasket" method="POST">
+                <input type= "hidden" name= "productId" value= "{{ allBeautyProducts.id }}"/>
+                <input type= "submit" value= "Buy"> <br/>
+             </form>
+             <button class="post-delete" post-id = "{{ allBeautyProducts.id }}"> Delete this product </button>
+            <a href="http://localhost/CodeIgniter/index.php/BeautyShop/updateForm/{{ allBeautyProducts.id }}"> Update this product </a>
 
 
-         <button class="post-delete" post-id = "{{ allBeautyProducts.id }}"> Delete this product </button>
-        <a href="http://localhost/CodeIgniter/index.php/BeautyShop/updateForm/{{ allBeautyProducts.id }}"> Update this product </a> <br/><br/>
         </li>
     {% endfor %} <br/> <br/>
 </ol>

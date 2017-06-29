@@ -32,10 +32,7 @@ class __TwigTemplate_6c40f3d848ed12302c9f706e3974fdc15b2fe90163d4234841b7c65ba3f
 <form action=\"http://localhost/CodeIgniter/index.php/BeautyShop/searchProduct\" method=\"post\">
 
     <label for=\"brand\">Search product by brand:  </label><br/>
-    <input type=\"text\" name=\"brand\" value=\"";
-        // line 14
-        echo twig_escape_filter($this->env, (isset($context["brand"]) ? $context["brand"] : null), "html", null, true);
-        echo "\">
+    <input type=\"text\" name=\"brand\">
 
     <input type=\"submit\" value=\"Search\">
 </form> <br/>
@@ -73,24 +70,31 @@ class __TwigTemplate_6c40f3d848ed12302c9f706e3974fdc15b2fe90163d4234841b7c65ba3f
             Quantity: ";
             // line 27
             echo twig_escape_filter($this->env, $this->getAttribute($context["allBeautyProducts"], "quantity", array()), "html", null, true);
-            echo "<br/>
+            echo " 
 
 
-         <button class=\"post-delete\" post-id = \"";
+            <input type= \"hidden\" name= \"productId\" value= \"";
             // line 30
             echo twig_escape_filter($this->env, $this->getAttribute($context["allBeautyProducts"], "id", array()), "html", null, true);
-            echo "\"> Delete this product </button>
-        <a href=\"http://localhost/CodeIgniter/index.php/BeautyShop/updateForm/";
-            // line 31
+            echo "\"/>
+            <input type= \"submit\" value= \"Buy\"> <br/>
+             <button class=\"post-delete\" post-id = \"";
+            // line 32
             echo twig_escape_filter($this->env, $this->getAttribute($context["allBeautyProducts"], "id", array()), "html", null, true);
-            echo "\"> Update this product </a> <br/><br/>
+            echo "\"> Delete this product </button>
+            <a href=\"http://localhost/CodeIgniter/index.php/BeautyShop/updateForm/";
+            // line 33
+            echo twig_escape_filter($this->env, $this->getAttribute($context["allBeautyProducts"], "id", array()), "html", null, true);
+            echo "\"> Update this product </a>
+
+
         </li>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['allBeautyProducts'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
+        // line 37
         echo " <br/> <br/>
 </ol>
 
@@ -111,7 +115,7 @@ class __TwigTemplate_6c40f3d848ed12302c9f706e3974fdc15b2fe90163d4234841b7c65ba3f
 
     public function getDebugInfo()
     {
-        return array (  94 => 33,  85 => 31,  81 => 30,  75 => 27,  71 => 26,  67 => 25,  63 => 24,  59 => 23,  55 => 22,  50 => 21,  46 => 20,  37 => 14,  25 => 5,  19 => 1,);
+        return array (  98 => 37,  87 => 33,  83 => 32,  78 => 30,  72 => 27,  68 => 26,  64 => 25,  60 => 24,  56 => 23,  52 => 22,  47 => 21,  43 => 20,  25 => 5,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -137,7 +141,7 @@ class __TwigTemplate_6c40f3d848ed12302c9f706e3974fdc15b2fe90163d4234841b7c65ba3f
 <form action=\"http://localhost/CodeIgniter/index.php/BeautyShop/searchProduct\" method=\"post\">
 
     <label for=\"brand\">Search product by brand:  </label><br/>
-    <input type=\"text\" name=\"brand\" value=\"{{ brand }}\">
+    <input type=\"text\" name=\"brand\">
 
     <input type=\"submit\" value=\"Search\">
 </form> <br/>
@@ -150,11 +154,15 @@ class __TwigTemplate_6c40f3d848ed12302c9f706e3974fdc15b2fe90163d4234841b7c65ba3f
             {{ allBeautyProducts.name }}
             Collection: {{ allBeautyProducts.collection }}
             Price: {{ allBeautyProducts.price }}
-            Quantity: {{ allBeautyProducts.quantity }}<br/>
+            Quantity: {{ allBeautyProducts.quantity }} 
 
 
-         <button class=\"post-delete\" post-id = \"{{ allBeautyProducts.id }}\"> Delete this product </button>
-        <a href=\"http://localhost/CodeIgniter/index.php/BeautyShop/updateForm/{{ allBeautyProducts.id }}\"> Update this product </a> <br/><br/>
+            <input type= \"hidden\" name= \"productId\" value= \"{{ allBeautyProducts.id }}\"/>
+            <input type= \"submit\" value= \"Buy\"> <br/>
+             <button class=\"post-delete\" post-id = \"{{ allBeautyProducts.id }}\"> Delete this product </button>
+            <a href=\"http://localhost/CodeIgniter/index.php/BeautyShop/updateForm/{{ allBeautyProducts.id }}\"> Update this product </a>
+
+
         </li>
     {% endfor %} <br/> <br/>
 </ol>
