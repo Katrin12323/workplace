@@ -8,6 +8,8 @@
 <body>
 <h2> All beauty products </h2>
 
+<div>BASKET AMOUNT: {{ basket.amount }}</div>
+</div> <br/>
 <form action="http://localhost/CodeIgniter/index.php/BeautyShop/searchProduct" method="post">
 
     <label for="brand">Search product by brand:  </label><br/>
@@ -16,7 +18,10 @@
     <input type="submit" value="Search">
 </form> <br/>
 
+
 <ol>
+
+
     {% for allBeautyProducts in beautyProducts %}
         <li class="post-{{ allBeautyProducts.id }}">
             {{ allBeautyProducts.brand }}
@@ -24,11 +29,16 @@
             {{ allBeautyProducts.name }}
             Collection: {{ allBeautyProducts.collection }}
             Price: {{ allBeautyProducts.price }}
-            Quantity: {{ allBeautyProducts.quantity }}<br/>
+            Quantity: {{ allBeautyProducts.quantity }}
+
+            <form action="http://localhost/CodeIgniter/index.php/BeautyShopBasket/addToBasket" method="POST">
+                <input type= "hidden" name= "productId" value= "{{ allBeautyProducts.id }}"/>
+                <input type= "submit" value= "Buy"> <br/>
+             </form>
+             <button class="post-delete" post-id = "{{ allBeautyProducts.id }}"> Delete this product </button>
+            <a href="http://localhost/CodeIgniter/index.php/BeautyShop/updateForm/{{ allBeautyProducts.id }}"> Update this product </a>
 
 
-         <button class="post-delete" post-id = "{{ allBeautyProducts.id }}"> Delete this product </button>
-        <a href="http://localhost/CodeIgniter/index.php/BeautyShop/updateForm/{{ allBeautyProducts.id }}"> Update this product </a> <br/><br/>
         </li>
     {% endfor %} <br/> <br/>
 </ol>

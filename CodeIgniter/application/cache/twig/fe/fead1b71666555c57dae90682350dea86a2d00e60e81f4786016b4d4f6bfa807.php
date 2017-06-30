@@ -29,6 +29,11 @@ class __TwigTemplate_6c40f3d848ed12302c9f706e3974fdc15b2fe90163d4234841b7c65ba3f
 <body>
 <h2> All beauty products </h2>
 
+<div>BASKET AMOUNT: ";
+        // line 11
+        echo twig_escape_filter($this->env, $this->getAttribute((isset($context["basket"]) ? $context["basket"] : null), "amount", array()), "html", null, true);
+        echo "</div>
+</div> <br/>
 <form action=\"http://localhost/CodeIgniter/index.php/BeautyShop/searchProduct\" method=\"post\">
 
     <label for=\"brand\">Search product by brand:  </label><br/>
@@ -37,53 +42,57 @@ class __TwigTemplate_6c40f3d848ed12302c9f706e3974fdc15b2fe90163d4234841b7c65ba3f
     <input type=\"submit\" value=\"Search\">
 </form> <br/>
 
+
 <ol>
+
+
     ";
-        // line 20
+        // line 25
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable((isset($context["beautyProducts"]) ? $context["beautyProducts"] : null));
         foreach ($context['_seq'] as $context["_key"] => $context["allBeautyProducts"]) {
-            // line 21
+            // line 26
             echo "        <li class=\"post-";
             echo twig_escape_filter($this->env, $this->getAttribute($context["allBeautyProducts"], "id", array()), "html", null, true);
             echo "\">
             ";
-            // line 22
+            // line 27
             echo twig_escape_filter($this->env, $this->getAttribute($context["allBeautyProducts"], "brand", array()), "html", null, true);
             echo "
             ";
-            // line 23
+            // line 28
             echo twig_escape_filter($this->env, $this->getAttribute($context["allBeautyProducts"], "kind", array()), "html", null, true);
             echo ",
             ";
-            // line 24
+            // line 29
             echo twig_escape_filter($this->env, $this->getAttribute($context["allBeautyProducts"], "name", array()), "html", null, true);
             echo "
             Collection: ";
-            // line 25
+            // line 30
             echo twig_escape_filter($this->env, $this->getAttribute($context["allBeautyProducts"], "collection", array()), "html", null, true);
             echo "
             Price: ";
-            // line 26
+            // line 31
             echo twig_escape_filter($this->env, $this->getAttribute($context["allBeautyProducts"], "price", array()), "html", null, true);
             echo "
             Quantity: ";
-            // line 27
+            // line 32
             echo twig_escape_filter($this->env, $this->getAttribute($context["allBeautyProducts"], "quantity", array()), "html", null, true);
-            echo " 
+            echo "
 
-
-            <input type= \"hidden\" name= \"productId\" value= \"";
-            // line 30
+            <form action=\"http://localhost/CodeIgniter/index.php/BeautyShopBasket/addToBasket\" method=\"POST\">
+                <input type= \"hidden\" name= \"productId\" value= \"";
+            // line 35
             echo twig_escape_filter($this->env, $this->getAttribute($context["allBeautyProducts"], "id", array()), "html", null, true);
             echo "\"/>
-            <input type= \"submit\" value= \"Buy\"> <br/>
+                <input type= \"submit\" value= \"Buy\"> <br/>
+             </form>
              <button class=\"post-delete\" post-id = \"";
-            // line 32
+            // line 38
             echo twig_escape_filter($this->env, $this->getAttribute($context["allBeautyProducts"], "id", array()), "html", null, true);
             echo "\"> Delete this product </button>
             <a href=\"http://localhost/CodeIgniter/index.php/BeautyShop/updateForm/";
-            // line 33
+            // line 39
             echo twig_escape_filter($this->env, $this->getAttribute($context["allBeautyProducts"], "id", array()), "html", null, true);
             echo "\"> Update this product </a>
 
@@ -94,7 +103,7 @@ class __TwigTemplate_6c40f3d848ed12302c9f706e3974fdc15b2fe90163d4234841b7c65ba3f
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['allBeautyProducts'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 43
         echo " <br/> <br/>
 </ol>
 
@@ -115,7 +124,7 @@ class __TwigTemplate_6c40f3d848ed12302c9f706e3974fdc15b2fe90163d4234841b7c65ba3f
 
     public function getDebugInfo()
     {
-        return array (  98 => 37,  87 => 33,  83 => 32,  78 => 30,  72 => 27,  68 => 26,  64 => 25,  60 => 24,  56 => 23,  52 => 22,  47 => 21,  43 => 20,  25 => 5,  19 => 1,);
+        return array (  107 => 43,  96 => 39,  92 => 38,  86 => 35,  80 => 32,  76 => 31,  72 => 30,  68 => 29,  64 => 28,  60 => 27,  55 => 26,  51 => 25,  34 => 11,  25 => 5,  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -138,6 +147,8 @@ class __TwigTemplate_6c40f3d848ed12302c9f706e3974fdc15b2fe90163d4234841b7c65ba3f
 <body>
 <h2> All beauty products </h2>
 
+<div>BASKET AMOUNT: {{ basket.amount }}</div>
+</div> <br/>
 <form action=\"http://localhost/CodeIgniter/index.php/BeautyShop/searchProduct\" method=\"post\">
 
     <label for=\"brand\">Search product by brand:  </label><br/>
@@ -146,7 +157,10 @@ class __TwigTemplate_6c40f3d848ed12302c9f706e3974fdc15b2fe90163d4234841b7c65ba3f
     <input type=\"submit\" value=\"Search\">
 </form> <br/>
 
+
 <ol>
+
+
     {% for allBeautyProducts in beautyProducts %}
         <li class=\"post-{{ allBeautyProducts.id }}\">
             {{ allBeautyProducts.brand }}
@@ -154,11 +168,12 @@ class __TwigTemplate_6c40f3d848ed12302c9f706e3974fdc15b2fe90163d4234841b7c65ba3f
             {{ allBeautyProducts.name }}
             Collection: {{ allBeautyProducts.collection }}
             Price: {{ allBeautyProducts.price }}
-            Quantity: {{ allBeautyProducts.quantity }} 
+            Quantity: {{ allBeautyProducts.quantity }}
 
-
-            <input type= \"hidden\" name= \"productId\" value= \"{{ allBeautyProducts.id }}\"/>
-            <input type= \"submit\" value= \"Buy\"> <br/>
+            <form action=\"http://localhost/CodeIgniter/index.php/BeautyShopBasket/addToBasket\" method=\"POST\">
+                <input type= \"hidden\" name= \"productId\" value= \"{{ allBeautyProducts.id }}\"/>
+                <input type= \"submit\" value= \"Buy\"> <br/>
+             </form>
              <button class=\"post-delete\" post-id = \"{{ allBeautyProducts.id }}\"> Delete this product </button>
             <a href=\"http://localhost/CodeIgniter/index.php/BeautyShop/updateForm/{{ allBeautyProducts.id }}\"> Update this product </a>
 
