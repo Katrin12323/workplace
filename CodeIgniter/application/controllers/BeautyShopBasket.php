@@ -37,4 +37,24 @@ class BeautyShopBasket extends CI_Controller {
 
         $this->twig->display('beautyShop/allProd', $data);
     }
+    public function amountFromBasket()
+    {
+        $this->load->model('beautyProductBasket');
+
+        $data['basketId'] = $this->session->basketId ;
+
+        if($data['basketId'] == NULL) {
+
+            $data['amountFromBasket'] = FALSE;
+
+        } else {
+            $data['amountFromBasket'] = $this->beautyProductBasket->getBasketById($this->session->basketId);
+        }
+
+        $this->twig->display('beautyShop/infoAboutPurchase', $data);
+
+       
+    }
+
+
 }
